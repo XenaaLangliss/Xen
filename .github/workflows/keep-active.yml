@@ -1,0 +1,24 @@
+name: Keep GitHub Active
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" # Jalan setiap 30 menit
+  workflow_dispatch: # Bisa dijalankan manual
+
+jobs:
+  keep-active:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update timestamp
+        run: echo "Last active: $(date)" > last_active.txt
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "XenaaLangliss"
+          git config --global user.email "myxena.mail@gmail.com"
+          git add last_active.txt
+          git commit -m "Update last active timestamp"
+          git push

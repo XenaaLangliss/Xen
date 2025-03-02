@@ -20,5 +20,5 @@ jobs:
           git config --global user.name "XenaaLangliss"
           git config --global user.email "myxena.mail@gmail.com"
           git add last_active.txt
-          git commit -m "Update last active timestamp"
+          git commit -m "Update last active timestamp" || echo "No changes to commit"
           git push

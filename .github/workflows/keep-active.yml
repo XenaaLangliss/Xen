@@ -2,8 +2,8 @@ name: Keep GitHub Active
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # Jalan setiap 30 menit
-  workflow_dispatch: # Bisa dijalankan manual
+    - cron: "*/1 * * * *"  # Menjalankan setiap 1 menit
+  workflow_dispatch:        # Bisa dijalankan manual
 
 jobs:
   keep-active:
